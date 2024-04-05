@@ -7,7 +7,7 @@ import numpy as np
 # whitebox default setting
 wbe = wbw.WbEnvironment()
 wbe.verbose = False
-wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\test_file_MTR\MTR_swmm_test\04_result'
+wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\04_result'
 
 # Create a shared colorbar axis
 fig, axes = plt.subplots(nrows=4, ncols=5, figsize=(72, 48))

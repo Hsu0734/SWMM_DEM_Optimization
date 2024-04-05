@@ -65,3 +65,4 @@ for i in range(6):
 
 plt.legend()
 plt.show()
+print(max(S3))

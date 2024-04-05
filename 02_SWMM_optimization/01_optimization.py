@@ -78,12 +78,12 @@ with Simulation(r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SW
                                     S11_1_BR, S12_BR, S12_1_BR, S12_2_BR, S12_3_BR, S12_4_BR, S13_BR, S13_1_BR, S14_BR, S14_1_BR)
 
             # constrain function
-            g1 = 4317 - (S1_BR + S1_1_BR + S2_BR + S2_1_BR + S3_BR + S3_1_BR + S4_BR + S4_1_BR + S5_BR + S5_1_BR + S6_BR + S6_1_BR + \
+            g1 = 10000 - (S1_BR + S1_1_BR + S2_BR + S2_1_BR + S3_BR + S3_1_BR + S4_BR + S4_1_BR + S5_BR + S5_1_BR + S6_BR + S6_1_BR + \
                  S6_2_BR + S7_BR + S7_1_BR + S8_BR + S9_BR + S10_BR + S10_1_BR + S11_BR + S11_1_BR + S12_BR + S12_1_BR + S12_2_BR + \
                  S12_3_BR + S12_4_BR + S13_BR + S13_1_BR + S14_BR + S14_1_BR)
             g2 =(S1_BR + S1_1_BR + S2_BR + S2_1_BR + S3_BR + S3_1_BR + S4_BR + S4_1_BR + S5_BR + S5_1_BR + S6_BR + S6_1_BR +
                  S6_2_BR + S7_BR + S7_1_BR + S8_BR + S9_BR + S10_BR + S10_1_BR + S11_BR + S11_1_BR + S12_BR + S12_1_BR + S12_2_BR +
-                 S12_3_BR + S12_4_BR + S13_BR + S13_1_BR + S14_BR + S14_1_BR) - 8702
+                 S12_3_BR + S12_4_BR + S13_BR + S13_1_BR + S14_BR + S14_1_BR) - 50000
 
             out["F"] = [cost_function, total_runoff_function, peak_runoff_fuction]
             out["G"] = [g1, g2]

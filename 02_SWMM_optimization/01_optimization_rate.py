@@ -21,8 +21,6 @@ from pymoo.termination import get_termination
 
 
 # setting variables
-
-
 with Simulation(r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\GuanyaoshanNJ.inp') as sim:
     lid_on_subs = LidGroups(sim)
 
@@ -32,7 +30,7 @@ with Simulation(r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SW
         def __init__(self, lid_on_subs, **kwargs):
             super().__init__(n_var=30,
                              n_obj=3,
-                             n_ieq_constr=2,
+                             n_ieq_constr=0,
                              xl=np.array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
                              xu=np.array([13500, 8100, 7600, 9300, 11900, 5100, 11700, 13000, 9100, 6400, 18500, 6600, 5400,
                                           16700, 11400, 17200, 8000, 12400, 10500, 8200, 7600, 14700, 9500, 8200, 19800, 26300, 8100, 19800, 5600, 12300]),
@@ -79,15 +77,15 @@ with Simulation(r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SW
                                     S11_1_BR, S12_BR, S12_1_BR, S12_2_BR, S12_3_BR, S12_4_BR, S13_BR, S13_1_BR, S14_BR, S14_1_BR)
 
             # constrain function
-            g1 = 10000 - (S1_BR + S1_1_BR + S2_BR + S2_1_BR + S3_BR + S3_1_BR + S4_BR + S4_1_BR + S5_BR + S5_1_BR + S6_BR + S6_1_BR + \
+            '''g1 = 10000 - (S1_BR + S1_1_BR + S2_BR + S2_1_BR + S3_BR + S3_1_BR + S4_BR + S4_1_BR + S5_BR + S5_1_BR + S6_BR + S6_1_BR + \
                  S6_2_BR + S7_BR + S7_1_BR + S8_BR + S9_BR + S10_BR + S10_1_BR + S11_BR + S11_1_BR + S12_BR + S12_1_BR + S12_2_BR + \
                  S12_3_BR + S12_4_BR + S13_BR + S13_1_BR + S14_BR + S14_1_BR)
             g2 =(S1_BR + S1_1_BR + S2_BR + S2_1_BR + S3_BR + S3_1_BR + S4_BR + S4_1_BR + S5_BR + S5_1_BR + S6_BR + S6_1_BR +
                  S6_2_BR + S7_BR + S7_1_BR + S8_BR + S9_BR + S10_BR + S10_1_BR + S11_BR + S11_1_BR + S12_BR + S12_1_BR + S12_2_BR +
-                 S12_3_BR + S12_4_BR + S13_BR + S13_1_BR + S14_BR + S14_1_BR) - 50000
+                 S12_3_BR + S12_4_BR + S13_BR + S13_1_BR + S14_BR + S14_1_BR) - 50000'''
 
             out["F"] = [cost_function, total_runoff_function, peak_runoff_fuction]
-            out["G"] = [g1, g2]
+            #out["G"] = [g1, g2]
 
     def compute_runoff(S1_BR, S1_1_BR, S2_BR, S2_1_BR, S3_BR, S3_1_BR, S4_BR, S4_1_BR, S5_BR, S5_1_BR,
                        S6_BR, S6_1_BR, S6_2_BR, S7_BR, S7_1_BR, S8_BR, S9_BR, S10_BR, S10_1_BR, S11_BR,
@@ -144,8 +142,8 @@ with Simulation(r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SW
 
                 prev_runoff = runoff_volume
 
-            sum_runoff_reduction_rate = ((max(Runoff) - 59.4817) / 59.4817) * 100
-            peak_runoff_reduction_rate = ((max(Peak_Runoff) - 0.7438) / 0.7438) * 100
+            sum_runoff_reduction_rate = ((max(Runoff) - 57.2426) / 57.2426) * 100
+            peak_runoff_reduction_rate = ((max(Peak_Runoff) - 0.7071) / 0.7071) * 100
             return sum_runoff_reduction_rate, peak_runoff_reduction_rate
 
 
@@ -153,8 +151,8 @@ with Simulation(r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SW
 
 
     algorithm = NSGA2(
-        pop_size=500,
-        n_offsprings=200,
+        pop_size=200,
+        n_offsprings=100,
         sampling=FloatRandomSampling(),
         crossover=SBX(prob=0.9, eta=15),
         mutation=PM(eta=20),
@@ -207,3 +205,20 @@ result_df = pd.DataFrame(F)
 result_df.to_csv('output_objectives.csv', index=False)
 result_dx = pd.DataFrame(X)
 result_dx.to_csv('output_solutions.csv', index=False)
+
+### balance Decision ###
+from pymoo.decomposition.asf import ASF
+
+weights = np.array([0.333, 0.333, 0.333])
+approx_ideal = F.min(axis=0)
+approx_nadir = F.max(axis=0)
+nF = (F - approx_ideal) / (approx_nadir - approx_ideal)
+decomp = ASF()
+k = decomp.do(nF, 1/weights).argmin()
+print("Best regarding ASF: Point \nk = %s\nF = %s" % (k, F[k]))
+print(k)
+
+plot = Scatter(tight_layout=True)
+plot.add(F, s=10)
+plot.add(F[k], s=50, color="red")
+plot.show()
