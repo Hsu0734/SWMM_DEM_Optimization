@@ -19,7 +19,7 @@ fig = plt.figure(figsize=(12, 8))
 # solution = solutions_df.iloc[solution_index]
 
 i = 1
-for index in range(0, 199):  # range的结束值是不包含的，所以这里是9而不是8
+for index in range(17, 18):  # range的结束值是不包含的，所以这里是9而不是8
     solution = solutions_df.iloc[index]
 
     sim = Simulation(r'../GuanyaoshanNJ.inp')
