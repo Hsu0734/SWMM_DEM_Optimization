@@ -14,6 +14,11 @@ tiff_prefixes = ['S1', 'S1-1', 'S2', 'S2-1', 'S3', 'S3-1', 'S4', 'S4-1', 'S5', '
                  'S6', 'S6-1', 'S6-2', 'S7', 'S7-1', 'S8', 'S9', 'S10', 'S10-1', 'S11',
                  'S11-1', 'S12', 'S12-1', 'S12-2', 'S12-3', 'S12-4', 'S13', 'S13-1', 'S14', 'S14-1']
 
+optimization_grid = [51, 1, 29, 24, 35, 95, 592, 1, 286, 2, 748, 87, 33, 464, 16,
+                     395, 210, 48, 110, 68, 190, 803, 169, 10, 154, 54, 583, 0, 8, 60]
+
+dem_n_grid = []
+
 for prefix in tiff_prefixes:
     # 构建文件路径
     file_path = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM\{}.tif'.format(prefix)
@@ -31,6 +36,6 @@ for prefix in tiff_prefixes:
             if dem[row, col] != dem.configs.nodata:  # 检查是否为有效数据
                 cut_and_fill[row, col] = 0.0  # 将有效网格设置为0.0
                 n_grid += 1  # 有效网格数加1
-
+    dem_n_grid.append(n_grid)
     # 打印有效网格数
-    print(f'{prefix}: {n_grid}')
+print(dem_n_grid)

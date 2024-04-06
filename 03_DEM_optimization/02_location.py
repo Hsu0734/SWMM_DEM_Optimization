@@ -15,7 +15,7 @@ wbe = wbw.WbEnvironment()
 wbe.verbose = False
 
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
-dem = wbe.read_raster('S1.tif')
+dem = wbe.read_raster('S4.tif')
 
 # creat a blank raster image of same size as the dem
 cut_and_fill = wbe.new_raster(dem.configs)
@@ -31,7 +31,7 @@ for row in range(dem.configs.rows):
             cut_and_fill[row, col] = 0.0
             n_grid = n_grid + 1
 print(n_grid)
-n_BRC = 300
+n_BRC = 592
 
 # ------------------------------------------ #
 # define MOO problem
@@ -40,7 +40,7 @@ class MyProblem(ElementwiseProblem):
     def __init__(self, n_grid, **kwargs):
         super().__init__(n_var=int(n_grid),
                          n_obj=3,
-                         n_ieq_constr=1,
+                         n_ieq_constr=2,
                          n_eq_constr=0,
                          xl=np.array([0] * n_grid),
                          xu=np.array([1] * n_grid),
@@ -59,12 +59,12 @@ class MyProblem(ElementwiseProblem):
         flow_length_function, velocity_function = path_sum_calculation(var_list)
 
         # notice your function should be <= 0
-        g1 = sum(abs(i) for i in var_list) - n_BRC
-        # g2 = sum(abs(i) for i in var_list) * 100 - 50000
+        g1 = sum(abs(i) for i in var_list) - (n_BRC * 1.1)
+        g2 = (n_BRC * 0.9) - sum(abs(i) for i in var_list)
 
         out["F"] = [earth_volume_function, flow_length_function, velocity_function]
-        out["G"] = [g1]
-        # out["H"] = [g2]
+        out["G"] = [g1, g2]
+        # out["H"] = [g1]
 
 def path_sum_calculation(var_list):
     i = 0
@@ -90,16 +90,16 @@ def path_sum_calculation(var_list):
         for col in range(flow_accum.configs.columns):
             elev = flow_accum[row, col]   # Read a cell value from a Raster
             velo = flow_accum[row, col]
-            if elev >= 14.36 and elev != flow_accum.configs.nodata:
+            if elev >= 13.68 and elev != flow_accum.configs.nodata:
                 path_length[row, col] = 1.0
-            elif elev < 14.36 or elev == flow_accum.configs.nodata:
+            elif elev < 13.68 or elev == flow_accum.configs.nodata:
                 path_length[row, col] = 0.0
 
             if velo == flow_accum.configs.nodata:
                 velocity[row, col] = slope.configs.nodata
             elif velo != flow_accum.configs.nodata:
                 slope_factor = (slope[row, col] / 100) ** 0.5
-                flow_factor = (flow_accum[row, col] * 100 * 0.000004215717) ** (2 / 3)
+                flow_factor = (flow_accum[row, col] * 4 * 0.00001042) ** (2 / 3)
                 velocity[row, col] = (slope_factor * flow_factor / 0.03) ** 0.6
 
     path = []
@@ -134,8 +134,8 @@ from pymoo.optimize import minimize
 from pymoo.problems.single.knapsack import create_random_knapsack_problem
 
 algorithm = NSGA2(
-    pop_size=200,
-    n_offsprings=100,
+    pop_size=100,
+    n_offsprings=50,
     sampling=BinaryRandomSampling(),
     crossover=SBX(prob=0.9, eta=15),
     mutation=PM(eta=20),
@@ -167,7 +167,7 @@ plot.add(F, s=10)
 plot.show()
 
 # 2D Pairwise Scatter Plots
-plt.figure(figsize=(7, 5))
+'''plt.figure(figsize=(7, 5))
 plt.scatter(F[:, 0], F[:, 1], s=20, facecolors='none', edgecolors='blue')
 plt.title("Flow path length (y) and total cost (x)")
 plt.grid()
@@ -181,7 +181,7 @@ plt.show()
 plt.scatter(F[:, 0], F[:, 2], s=20, facecolors='none', edgecolors='blue')
 plt.title("Max velocity (y) and total cost (x)")
 plt.grid()
-plt.show()
+plt.show()'''
 
 
 # save the data
@@ -190,7 +190,7 @@ result_df.to_csv('output_2m.csv', index=False)
 
 ### Decision making ###
 ### Min Decision ###
-'''min_earth_volume = np.argmin(F[:, 0])
+min_earth_volume = np.argmin(F[:, 0])
 min_flow_length = np.argmin(F[:, 1])
 min_velocity = np.argmin(F[:, 2])
 
@@ -202,7 +202,7 @@ min_earth_volume_dem = wbe.new_raster(dem.configs)
 min_flow_length_dem = wbe.new_raster(dem.configs)
 min_velocity_dem = wbe.new_raster(dem.configs)
 
-wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\test_file_MTR\MTR_swmm_test\04_result'
+wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\04_result'
 t = 0
 for row in range(dem.configs.rows):
     for col in range(dem.configs.columns):
@@ -230,7 +230,7 @@ wbe.write_raster(after_dem_minFL, file_name='min_flow_length_dem', compress=True
 wbe.write_raster(after_dem_minV, file_name='min_velocity_dem', compress=True)
 
 ### balance Decision ###
-from pymoo.decomposition.asf import ASF
+'''from pymoo.decomposition.asf import ASF
 
 weights = np.array([0.333, 0.333, 0.333])
 approx_ideal = F.min(axis=0)
