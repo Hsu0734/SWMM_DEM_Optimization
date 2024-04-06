@@ -172,4 +172,7 @@ for prefix in tiff_prefixes:
     plot.add(F, s=10)
     plot.show()
 
+    plotname = f'optimization_results_round_{n_round}.png'  # 使用 f-string 插入 n_round 值
+    plt.savefig(plotname)
+
     n_round = n_round + 1
