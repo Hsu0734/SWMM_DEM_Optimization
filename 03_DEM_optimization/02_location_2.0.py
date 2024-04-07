@@ -146,8 +146,8 @@ for prefix in tiff_prefixes:
         pop_size=100,
         n_offsprings=50,
         sampling=BinaryRandomSampling(),
-        crossover=SBX(prob=0.9, eta=15),
-        mutation=PM(eta=20),
+        crossover=TwoPointCrossover(prob=0.9),  # 适合二元变量的交叉操作
+        mutation=BitflipMutation(prob=0.1),
         eliminate_duplicates=True)
 
     termination = get_termination("n_gen", 50)
@@ -170,9 +170,18 @@ for prefix in tiff_prefixes:
     # 3D Visualization
     plot = Scatter(tight_layout=True)
     plot.add(F, s=10)
-    plot.show()
+    # 将图像保存到文件，文件名根据当前的n_round来命名
+    plot_figure_path = 'scatter_plot_round_{}.png'.format(n_round)
+    plot.save(plot_figure_path)  # 使用save方法而不是show
 
-    plotname = f'optimization_results_round_{n_round}.png'  # 使用 f-string 插入 n_round 值
-    plt.savefig(plotname)
+    # 将目标函数值保存到CSV文件，文件名包含当前的n_round
+    output_objectives_file = 'output_objectives_round_{}.csv'.format(n_round)
+    result_df = pd.DataFrame(F)
+    result_df.to_csv(output_objectives_file, index=False)
+
+    # 将解的变量值保存到CSV文件，文件名包含当前的n_round
+    output_solutions_file = 'output_solutions_round_{}.csv'.format(n_round)
+    result_dx = pd.DataFrame(X)
+    result_dx.to_csv(output_solutions_file, index=False)
 
     n_round = n_round + 1

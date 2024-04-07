@@ -133,17 +133,24 @@ from pymoo.operators.sampling.rnd import BinaryRandomSampling
 from pymoo.optimize import minimize
 from pymoo.problems.single.knapsack import create_random_knapsack_problem
 
-algorithm = NSGA2(
+'''algorithm = NSGA2(
     pop_size=100,
     n_offsprings=50,
     sampling=BinaryRandomSampling(),
     crossover=SBX(prob=0.9, eta=15),
     mutation=PM(eta=20),
     eliminate_duplicates=True
-)
+)'''
+algorithm = NSGA2(
+    pop_size=100,
+    n_offsprings=50,
+    sampling=BinaryRandomSampling(),
+    crossover=TwoPointCrossover(prob=0.9),  # 适合二元变量的交叉操作
+    mutation=BitflipMutation(prob=0.1),
+    eliminate_duplicates=True)
 
 
-termination = get_termination("n_gen", 50)
+termination = get_termination("n_gen", 100)
 
 from pymoo.optimize import minimize
 res = minimize(problem,
@@ -186,7 +193,9 @@ plt.show()'''
 
 # save the data
 result_df = pd.DataFrame(F)
-result_df.to_csv('output_2m.csv', index=False)
+result_df.to_csv('output_S4.csv', index=False)
+result_df = pd.DataFrame(X)
+result_df.to_csv('output_variable_S4.csv', index=False)
 
 ### Decision making ###
 ### Min Decision ###
