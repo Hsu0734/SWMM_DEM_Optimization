@@ -15,7 +15,7 @@ wbe = wbw.WbEnvironment()
 wbe.verbose = False
 
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
-dem = wbe.read_raster('S4.tif')
+dem = wbe.read_raster('S1.tif')
 
 # creat a blank raster image of same size as the dem
 cut_and_fill = wbe.new_raster(dem.configs)
@@ -31,7 +31,17 @@ for row in range(dem.configs.rows):
             cut_and_fill[row, col] = 0.0
             n_grid = n_grid + 1
 print(n_grid)
-n_BRC = 592
+n_BRC = 51
+
+
+flow_accum = wbe.d8_flow_accum(dem, out_type='cells')
+Flow_accum_value = []
+for row in range(flow_accum.configs.rows):
+    for col in range(flow_accum.configs.columns):
+        accum = flow_accum[row, col]  # Read a cell value from a Raster
+        if accum != flow_accum.configs.nodata:
+            Flow_accum_value.append(accum)
+threshold = max(Flow_accum_value) * 0.02
 
 # ------------------------------------------ #
 # define MOO problem
@@ -49,9 +59,7 @@ class MyProblem(ElementwiseProblem):
 
     def _evaluate(self, x, out, *args, **kwargs):
 
-        var_list = []
-        for i in range(n_grid):
-            var_list.append(x[i])
+        var_list = [float(value) for value in x]
 
         # notice your function should be Min function
         # resolution area: 4m^2  depth: 0.5m
@@ -73,7 +81,7 @@ def path_sum_calculation(var_list):
             if dem[row, col] == dem.configs.nodata:
                 cut_and_fill[row, col] = dem.configs.nodata
             elif dem[row, col] != dem.configs.nodata:
-                cut_and_fill[row, col] = var_list[i]
+                cut_and_fill[row, col] = var_list[i] * 0.5
                 i = i + 1
 
     # creat dem_pop
@@ -86,13 +94,15 @@ def path_sum_calculation(var_list):
     path_length = wbe.new_raster(flow_accum.configs)
     velocity = wbe.new_raster(flow_accum.configs)
 
+
+
     for row in range(flow_accum.configs.rows):
         for col in range(flow_accum.configs.columns):
-            elev = flow_accum[row, col]   # Read a cell value from a Raster
+            elev = flow_accum[row, col]
             velo = flow_accum[row, col]
-            if elev >= 13.68 and elev != flow_accum.configs.nodata:
+            if elev >= threshold and elev != flow_accum.configs.nodata:
                 path_length[row, col] = 1.0
-            elif elev < 13.68 or elev == flow_accum.configs.nodata:
+            elif elev < threshold or elev == flow_accum.configs.nodata:
                 path_length[row, col] = 0.0
 
             if velo == flow_accum.configs.nodata:
@@ -101,12 +111,11 @@ def path_sum_calculation(var_list):
                 slope_factor = (slope[row, col] / 100) ** 0.5
                 flow_factor = (flow_accum[row, col] * 4 * 0.00001042) ** (2 / 3)
                 velocity[row, col] = (slope_factor * flow_factor / 0.03) ** 0.6
-
+    # 找到path length和max velocity
     path = []
     for row in range(path_length.configs.rows):
         for col in range(path_length.configs.columns):
             path.append(path_length[row, col])
-
 
     velocity_value = []
     for row in range(velocity.configs.rows):
@@ -150,7 +159,7 @@ algorithm = NSGA2(
     eliminate_duplicates=True)
 
 
-termination = get_termination("n_gen", 100)
+termination = get_termination("n_gen", 50)
 
 from pymoo.optimize import minimize
 res = minimize(problem,
@@ -172,6 +181,8 @@ import matplotlib.pyplot as plt
 plot = Scatter(tight_layout=True)
 plot.add(F, s=10)
 plot.show()
+plot_figure_path = 'scatter_plot_S1.png'
+plot.save(plot_figure_path)
 
 # 2D Pairwise Scatter Plots
 '''plt.figure(figsize=(7, 5))
@@ -193,9 +204,12 @@ plt.show()'''
 
 # save the data
 result_df = pd.DataFrame(F)
-result_df.to_csv('output_S4.csv', index=False)
-result_df = pd.DataFrame(X)
-result_df.to_csv('output_variable_S4.csv', index=False)
+result_df.to_csv('output_solution_S1.csv', index=False)
+# 将True/False转换为1/0
+X_int = X.astype(int)  # 转换成0/1
+result_df = pd.DataFrame(X_int)
+result_df.to_csv('output_variable_S1.csv', index=False)
+
 
 ### Decision making ###
 ### Min Decision ###

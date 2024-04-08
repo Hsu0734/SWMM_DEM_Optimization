@@ -40,6 +40,15 @@ for prefix in tiff_prefixes:
                 n_grid += 1  # 有效网格数加1
     dem_n_grid.append(n_grid)
 
+    flow_accum = wbe.d8_flow_accum(dem, out_type='cells')
+    Flow_accum_value = []
+    for row in range(flow_accum.configs.rows):
+        for col in range(flow_accum.configs.columns):
+            accum = flow_accum[row, col]  # Read a cell value from a Raster
+            if accum != flow_accum.configs.nodata:
+                Flow_accum_value.append(accum)
+    threshold = max(Flow_accum_value) * 0.02
+
     n_round = 0
     # define MOO problem
     class MyProblem(ElementwiseProblem):
@@ -47,7 +56,7 @@ for prefix in tiff_prefixes:
         def __init__(self, n_grid, **kwargs):
             super().__init__(n_var=int(n_grid),
                              n_obj=3,
-                             n_ieq_constr=2,
+                             n_ieq_constr=0,
                              n_eq_constr=0,
                              xl=np.array([0] * n_grid),
                              xu=np.array([1] * n_grid),
@@ -55,19 +64,17 @@ for prefix in tiff_prefixes:
             self.n_grid = n_grid
 
         def _evaluate(self, x, out, *args, **kwargs):
-            var_list = []
-            for i in range(n_grid):
-                var_list.append(x[i])
+            var_list = [int(value) for value in x]
 
             earth_volume_function = sum(abs(i) for i in var_list) * 4 * 0.5
             flow_length_function, velocity_function = path_sum_calculation(var_list)
 
             # notice your function should be <= 0
-            g1 = sum(abs(i) for i in var_list) - (optimization_grid[n_round] * 1.1)
-            g2 = (optimization_grid[n_round] * 0.9) - sum(abs(i) for i in var_list)
+            #g1 = sum(abs(i) for i in var_list) - (optimization_grid[n_round] * 1.1)
+            #g2 = (optimization_grid[n_round] * 0.9) - sum(abs(i) for i in var_list)
 
             out["F"] = [earth_volume_function, flow_length_function, velocity_function]
-            out["G"] = [g1, g2]
+            #out["G"] = [g1, g2]
 
 
     def path_sum_calculation(var_list):
@@ -77,7 +84,7 @@ for prefix in tiff_prefixes:
                 if dem[row, col] == dem.configs.nodata:
                     cut_and_fill[row, col] = dem.configs.nodata
                 elif dem[row, col] != dem.configs.nodata:
-                    cut_and_fill[row, col] = var_list[i]
+                    cut_and_fill[row, col] = var_list[i] * 0.5
                     i = i + 1
 
         # creat dem_pop
@@ -89,21 +96,14 @@ for prefix in tiff_prefixes:
 
         path_length = wbe.new_raster(flow_accum.configs)
         velocity = wbe.new_raster(flow_accum.configs)
-        Flow_accum_value = []
-
-        for row in range(flow_accum.configs.rows):
-            for col in range(flow_accum.configs.columns):
-                accum = flow_accum[row, col]  # Read a cell value from a Raster
-                if accum != flow_accum.configs.nodata:
-                    Flow_accum_value.append(accum)
 
         for row in range(flow_accum.configs.rows):
             for col in range(flow_accum.configs.columns):
                 elev = flow_accum[row, col]
                 velo = flow_accum[row, col]
-                if elev >= max(Flow_accum_value) * 0.02 and elev != flow_accum.configs.nodata:
+                if elev >= threshold and elev != flow_accum.configs.nodata:
                     path_length[row, col] = 1.0
-                elif elev < max(Flow_accum_value) * 0.02 or elev == flow_accum.configs.nodata:
+                elif elev < threshold or elev == flow_accum.configs.nodata:
                     path_length[row, col] = 0.0
 
                 if velo == flow_accum.configs.nodata:
@@ -131,16 +131,11 @@ for prefix in tiff_prefixes:
 
     # choose algorithm
     from pymoo.algorithms.moo.nsga2 import NSGA2
-    from pymoo.operators.crossover.sbx import SBX
-    from pymoo.operators.mutation.pm import PM
-    from pymoo.operators.sampling.rnd import FloatRandomSampling
     from pymoo.termination import get_termination
-
     from pymoo.operators.crossover.pntx import TwoPointCrossover
     from pymoo.operators.mutation.bitflip import BitflipMutation
     from pymoo.operators.sampling.rnd import BinaryRandomSampling
-    from pymoo.optimize import minimize
-    from pymoo.problems.single.knapsack import create_random_knapsack_problem
+
 
     algorithm = NSGA2(
         pop_size=100,
@@ -150,7 +145,7 @@ for prefix in tiff_prefixes:
         mutation=BitflipMutation(prob=0.1),
         eliminate_duplicates=True)
 
-    termination = get_termination("n_gen", 50)
+    termination = get_termination("n_gen", 100)
 
     from pymoo.optimize import minimize
 
