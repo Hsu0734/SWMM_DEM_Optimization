@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Read and print the DEM data
-path_00 = '../04_result/min_velocity_solution.tif'
+path_00 = '../04_result/min_earth_volume_solution.tif'
 data_00 = rs.open(path_00)
 
 # Read the DEM data into a NumPy array

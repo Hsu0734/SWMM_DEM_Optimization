@@ -8,10 +8,23 @@ wbe.verbose = False
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
 
 # web read DEM data
-dem = wbe.read_raster('S4.tif')
+dem = wbe.read_raster('S12-2.tif')
 
 sink = wbe.sink(dem)
-wbe.write_raster(sink, 'DEM_sink.tif', compress=True)
+sink_area = wbe.new_raster(dem.configs)
+for row in range(sink_area.configs.rows):
+    for col in range(sink_area.configs.columns):
+        area = dem[row, col]
+        area_sink = sink[row, col]
+        if area != dem.configs.nodata and area_sink == sink.configs.nodata:
+            sink_area[row, col] = 0.0
+        elif area == dem.configs.nodata:
+            sink_area[row, col] = dem.configs.nodata
+        elif area_sink != sink.configs.nodata:
+            sink_area[row, col] = 1.0
+
+
+wbe.write_raster(sink_area, 'DEM_sink.tif', compress=True)
 
 # visualization
 path_01 = '../01_data/DEM/DEM_sink.tif'
@@ -19,7 +32,7 @@ data_01 = rs.open(path_01)
 
 fig, ax = plt.subplots(figsize=(16, 16))
 ax.tick_params(axis='both', which='major', labelsize=20)
-show(data_01, title='DEM_demo_d8', ax=ax)
+show(data_01, title='DEM_sink', ax=ax)
 
 plt.ticklabel_format(style='plain')
 # ax.get_xaxis().get_major_formatter().set_scientific(False)  # 关闭科学计数法
