@@ -15,7 +15,7 @@ wbe = wbw.WbEnvironment()
 wbe.verbose = False
 
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
-dem = wbe.read_raster('S1.tif')
+dem = wbe.read_raster('S4.tif')
 
 # creat a blank raster image of same size as the dem
 cut_and_fill = wbe.new_raster(dem.configs)
@@ -31,7 +31,7 @@ for row in range(dem.configs.rows):
             cut_and_fill[row, col] = 0.0
             n_grid = n_grid + 1
 print(n_grid)
-n_BRC = 51
+n_BRC = 592
 
 
 flow_accum = wbe.d8_flow_accum(dem, out_type='cells')
@@ -42,6 +42,7 @@ for row in range(flow_accum.configs.rows):
         if accum != flow_accum.configs.nodata:
             Flow_accum_value.append(accum)
 threshold = max(Flow_accum_value) * 0.02
+print(threshold)
 
 # ------------------------------------------ #
 # define MOO problem
@@ -50,7 +51,7 @@ class MyProblem(ElementwiseProblem):
     def __init__(self, n_grid, **kwargs):
         super().__init__(n_var=int(n_grid),
                          n_obj=3,
-                         n_ieq_constr=2,
+                         n_ieq_constr=1,
                          n_eq_constr=0,
                          xl=np.array([0] * n_grid),
                          xu=np.array([1] * n_grid),
@@ -63,16 +64,16 @@ class MyProblem(ElementwiseProblem):
 
         # notice your function should be Min function
         # resolution area: 4m^2  depth: 0.5m
-        earth_volume_function = sum(abs(i) for i in var_list) * 4 * 0.5
+        earth_volume_function = sum(abs(i) for i in var_list) * 4
         flow_length_function, velocity_function = path_sum_calculation(var_list)
 
         # notice your function should be <= 0
-        g1 = sum(abs(i) for i in var_list) - (n_BRC * 1.1)
-        g2 = (n_BRC * 0.9) - sum(abs(i) for i in var_list)
+        g1 = sum(abs(i) for i in var_list) - 592
+        #g2 = (n_BRC * 0.9) - sum(abs(i) for i in var_list)
 
         out["F"] = [earth_volume_function, flow_length_function, velocity_function]
-        out["G"] = [g1, g2]
-        # out["H"] = [g1]
+        out["G"] = [g1]
+        #out["H"] = [g1]
 
 def path_sum_calculation(var_list):
     i = 0
@@ -81,7 +82,7 @@ def path_sum_calculation(var_list):
             if dem[row, col] == dem.configs.nodata:
                 cut_and_fill[row, col] = dem.configs.nodata
             elif dem[row, col] != dem.configs.nodata:
-                cut_and_fill[row, col] = var_list[i] * 0.5
+                cut_and_fill[row, col] = var_list[i]
                 i = i + 1
 
     # creat dem_pop
@@ -93,8 +94,6 @@ def path_sum_calculation(var_list):
 
     path_length = wbe.new_raster(flow_accum.configs)
     velocity = wbe.new_raster(flow_accum.configs)
-
-
 
     for row in range(flow_accum.configs.rows):
         for col in range(flow_accum.configs.columns):
@@ -122,7 +121,7 @@ def path_sum_calculation(var_list):
         for col in range(velocity.configs.columns):
             velocity_value.append(velocity[row, col])
 
-    path_sum = sum(path)
+    path_sum = -sum(path)
     max_velocity = max(velocity_value)
     return path_sum, max_velocity
 
@@ -142,21 +141,21 @@ from pymoo.operators.sampling.rnd import BinaryRandomSampling
 from pymoo.optimize import minimize
 from pymoo.problems.single.knapsack import create_random_knapsack_problem
 
-'''algorithm = NSGA2(
-    pop_size=100,
-    n_offsprings=50,
-    sampling=BinaryRandomSampling(),
+algorithm = NSGA2(
+    pop_size=200,
+    n_offsprings=100,
+    sampling=FloatRandomSampling(),
     crossover=SBX(prob=0.9, eta=15),
     mutation=PM(eta=20),
-    eliminate_duplicates=True
-)'''
-algorithm = NSGA2(
+    eliminate_duplicates=True)
+
+'''algorithm = NSGA2(
     pop_size=100,
     n_offsprings=50,
     sampling=BinaryRandomSampling(),
     crossover=TwoPointCrossover(prob=0.9),  # 适合二元变量的交叉操作
     mutation=BitflipMutation(prob=0.1),
-    eliminate_duplicates=True)
+    eliminate_duplicates=True)'''
 
 
 termination = get_termination("n_gen", 50)
@@ -181,7 +180,7 @@ import matplotlib.pyplot as plt
 plot = Scatter(tight_layout=True)
 plot.add(F, s=10)
 plot.show()
-plot_figure_path = 'scatter_plot_S1.png'
+plot_figure_path = 'scatter_plot_S4.png'
 plot.save(plot_figure_path)
 
 # 2D Pairwise Scatter Plots
@@ -204,11 +203,11 @@ plt.show()'''
 
 # save the data
 result_df = pd.DataFrame(F)
-result_df.to_csv('output_solution_S1.csv', index=False)
+result_df.to_csv('output_solution_S4.csv', index=False)
 # 将True/False转换为1/0
 X_int = X.astype(int)  # 转换成0/1
 result_df = pd.DataFrame(X_int)
-result_df.to_csv('output_variable_S1.csv', index=False)
+result_df.to_csv('output_variable_S4.csv', index=False)
 
 
 ### Decision making ###
