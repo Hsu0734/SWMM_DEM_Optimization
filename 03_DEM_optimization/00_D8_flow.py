@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 
 wbe = wbw.WbEnvironment()
 wbe.verbose = False
-wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
+wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\04_result'
 
 # web read DEM data
-dem = wbe.read_raster('S4.tif')
+dem = wbe.read_raster('min_flow_length_dem.tif')
 
 # hydrological analysis
 flow_accu = wbe.d8_flow_accum(dem, out_type='cells')

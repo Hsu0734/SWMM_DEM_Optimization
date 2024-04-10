@@ -18,21 +18,19 @@ wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimiz
 dem = wbe.read_raster('S4.tif')
 
 # creat a blank raster image of same size as the dem
-cut_and_fill = wbe.new_raster(dem.configs)
+layer = wbe.new_raster(dem.configs)
 
 # number of valid grid
 n_grid = 0
-
 for row in range(dem.configs.rows):
     for col in range(dem.configs.columns):
         if dem[row, col] == dem.configs.nodata:
-            cut_and_fill[row, col] = dem.configs.nodata
+            layer[row, col] = dem.configs.nodata
         elif dem[row, col] != dem.configs.nodata:
-            cut_and_fill[row, col] = 0.0
+            layer[row, col] = 0.0
             n_grid = n_grid + 1
-
 print(n_grid)
-n_BRC = 592
+n_BRC = 592 # 第一个优化解集的结果
 
 
 # ------------------------------------------ #
@@ -45,21 +43,23 @@ class MyProblem(ElementwiseProblem):
                          n_ieq_constr=0,
                          n_eq_constr=0,
                          xl=np.array([0] * n_grid),
-                         xu=np.array([2] * n_grid),
+                         xu=np.array([1] * n_grid),
                          **kwargs)
         self.n_grid = n_grid
 
     def _evaluate(self, x, out, *args, **kwargs):
         #var_list = [float(value) for value in x]
-        var_list = [x[i] for i in range(n_grid)]
+        var_list = [float(value) for value in x]
 
         earth_volume_function = sum(abs(i) for i in var_list)
         sink_function = path_sum_calculation(var_list)
 
         # notice your function should be <= 0
-        #g1 = 2324 - var_list.count(0)
-        # g1 = sum(abs(i) for i in var_list) - 592
+        # g1 = 2324 - var_list.count(0)
+        #g1 = sum(abs(i) for i in var_list) - 592
         #g2 = (n_BRC * 0.9) - sum(abs(i) for i in var_list)
+        #g1 = -sink_function - 651
+        #g2 = n_BRC * 0.9 + sink_function
 
         out["F"] = [earth_volume_function, sink_function]
         #out["G"] = [g1]
@@ -67,6 +67,7 @@ class MyProblem(ElementwiseProblem):
 
 def path_sum_calculation(var_list):
     i = 0
+    cut_and_fill = wbe.new_raster(dem.configs)
     for row in range(dem.configs.rows):
         for col in range(dem.configs.columns):
             if dem[row, col] == dem.configs.nodata:
@@ -76,22 +77,27 @@ def path_sum_calculation(var_list):
                 i = i + 1
 
     # creat dem_pop
-    dem_pop = wbe.raster_calculator(expression="'dem' - 'cut_and_fill'", input_rasters=[dem, cut_and_fill])
+    # dem_pop = wbe.raster_calculator(expression="'dem' - 'cut_and_fill'", input_rasters=[dem, cut_and_fill])
+    dem_pop = dem - cut_and_fill
 
     # path length calculation
-    sink = wbe.sink(dem_pop)
-    sink_area = wbe.new_raster(dem.configs)
-    sink_value = []
+    sink = wbe.sink(dem_pop, zero_background=False)
+    sink_area = wbe.new_raster(dem_pop.configs)
+
     for row in range(sink_area.configs.rows):
         for col in range(sink_area.configs.columns):
-            area_sink = sink[row, col]
-            if area_sink == sink.configs.nodata:
+            num_sink = sink[row, col]
+            if num_sink == sink.configs.nodata:
                 sink_area[row, col] = 0.0
-            elif area_sink != sink.configs.nodata:
+            else:
                 sink_area[row, col] = 1.0
-                sink_value.append(sink_area[row, col])
 
-    sink_sum = -sum(sink_value)
+    Sink_value = []
+    for row in range(sink_area.configs.rows):
+        for col in range(sink_area.configs.columns):
+            Sink_value.append(sink_area[row, col])
+
+    sink_sum = -sum(Sink_value)
     return sink_sum
 
 problem = MyProblem(n_grid)
@@ -127,7 +133,7 @@ algorithm = NSGA2(
     eliminate_duplicates=True)'''
 
 
-termination = get_termination("n_gen", 100)
+termination = get_termination("n_gen", 500)
 
 from pymoo.optimize import minimize
 res = minimize(problem,

@@ -6,9 +6,9 @@ import numpy as np
 
 wbe = wbw.WbEnvironment()
 wbe.verbose = False
-wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
+wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\04_result'
 
-dem = wbe.read_raster('S4.tif')
+dem = wbe.read_raster('min_flow_length_dem.tif')
 
 # web read DEM data
 slope = wbe.slope(dem, units="percent")

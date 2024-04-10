@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 
 wbe = wbw.WbEnvironment()
 wbe.verbose = False
-wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
+wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\04_result'
 
 # web read DEM data
-dem = wbe.read_raster('S12-2.tif')
+dem = wbe.read_raster('min_earth_volume_dem.tif')
 
 sink = wbe.sink(dem)
 sink_area = wbe.new_raster(dem.configs)
@@ -27,7 +27,7 @@ for row in range(sink_area.configs.rows):
 wbe.write_raster(sink_area, 'DEM_sink.tif', compress=True)
 
 # visualization
-path_01 = '../01_data/DEM/DEM_sink.tif'
+path_01 = '../04_result/DEM_sink.tif'
 data_01 = rs.open(path_01)
 
 fig, ax = plt.subplots(figsize=(16, 16))
