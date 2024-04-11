@@ -8,7 +8,7 @@ wbe.verbose = False
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\04_result'
 
 # web read DEM data
-dem = wbe.read_raster('min_earth_volume_dem.tif')
+dem = wbe.read_raster('min_flow_length_dem.tif')
 
 sink = wbe.sink(dem)
 sink_area = wbe.new_raster(dem.configs)

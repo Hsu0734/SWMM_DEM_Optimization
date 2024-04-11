@@ -15,21 +15,24 @@ wbe = wbw.WbEnvironment()
 wbe.verbose = False
 
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
-dem = wbe.read_raster('S4.tif')
+dem = wbe.read_raster('S1.tif')
 
 # creat a blank raster image of same size as the dem
 layer = wbe.new_raster(dem.configs)
 
 # number of valid grid
-n_grid = 0
+grid = []
+q = 1
 for row in range(dem.configs.rows):
     for col in range(dem.configs.columns):
         if dem[row, col] == dem.configs.nodata:
             layer[row, col] = dem.configs.nodata
         elif dem[row, col] != dem.configs.nodata:
             layer[row, col] = 0.0
-            n_grid = n_grid + 1
+            grid.append(q)
+n_grid = sum(grid)
 print(n_grid)
+
 n_BRC = 592 # 第一个优化解集的结果
 
 
@@ -71,7 +74,7 @@ def path_sum_calculation(var_list):
     for row in range(dem.configs.rows):
         for col in range(dem.configs.columns):
             if dem[row, col] == dem.configs.nodata:
-                cut_and_fill[row, col] = dem.configs.nodata
+                cut_and_fill[row, col] = 0.0
             elif dem[row, col] != dem.configs.nodata:
                 cut_and_fill[row, col] = var_list[i]
                 i = i + 1
@@ -120,8 +123,8 @@ algorithm = NSGA2(
     pop_size=100,
     n_offsprings=50,
     sampling=FloatRandomSampling(),
-    crossover=SBX(prob=0.9, eta=15),
-    mutation=PM(eta=20),
+    crossover=SBX(prob=0.8, eta=30),
+    mutation=PM(eta=40),
     eliminate_duplicates=True)
 
 '''algorithm = NSGA2(
@@ -133,7 +136,7 @@ algorithm = NSGA2(
     eliminate_duplicates=True)'''
 
 
-termination = get_termination("n_gen", 500)
+termination = get_termination("n_gen", 400)
 
 from pymoo.optimize import minimize
 res = minimize(problem,
@@ -155,7 +158,7 @@ import matplotlib.pyplot as plt
 plot = Scatter(tight_layout=True)
 plot.add(F, s=10)
 plot.show()
-plot_figure_path = 'scatter_plot_S4.png'
+plot_figure_path = 'scatter_plot_S1.png'
 plot.save(plot_figure_path)
 
 # 2D Pairwise Scatter Plots
@@ -178,12 +181,12 @@ plt.show()'''
 
 # save the data
 result_df = pd.DataFrame(F)
-result_df.to_csv('output_solution_S4.csv', index=False)
+result_df.to_csv('output_solution_S1.csv', index=False)
 # 将True/False转换为1/0
 #X_int = X.astype(int)  # 转换成0/1
 #result_df = pd.DataFrame(X_int)
 result_df = pd.DataFrame(X)
-result_df.to_csv('output_variable_S4.csv', index=False)
+result_df.to_csv('output_variable_S1.csv', index=False)
 
 
 ### Decision making ###

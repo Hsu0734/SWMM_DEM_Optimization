@@ -5,29 +5,330 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c912897f-0fd6-4eb9-83c2-fc3199405588" name="变更" comment="0403">
-      <change afterPath="$PROJECT_DIR$/04_result/DEM_demo_d8.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_result/DEM_demo_velocity.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_result/DEM_sink.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_result/min_earth_volume_dem.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_result/min_earth_volume_solution.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_result/min_flow_length_dem.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_result/min_flow_length_solution.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05_visualization/01_specific_sink.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05_visualization/02_mean_sink.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05_visualization/DEM_sink.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05_visualization/output_solution_S4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05_visualization/output_variable_S4.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05_visualization/scatter_plot_S4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/03_mean_sink.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/04_total_earth_work.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_0.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_1.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_10.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_11.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_12.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_13.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_14.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_15.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_16.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_17.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_18.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_19.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_2.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_20.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_21.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_22.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_23.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_24.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_25.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_26.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_27.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_28.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_29.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_3.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_30.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_31.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_32.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_33.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_34.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_35.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_36.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_37.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_38.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_39.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_4.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_40.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_41.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_42.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_43.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_44.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_45.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_46.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_47.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_48.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_49.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_5.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_50.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_51.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_52.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_53.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_54.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_55.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_56.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_57.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_58.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_59.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_6.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_60.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_61.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_62.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_63.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_64.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_65.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_66.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_67.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_68.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_69.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_7.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_70.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_71.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_72.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_73.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_74.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_75.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_76.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_77.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_78.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_79.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_8.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_80.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_81.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_82.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_83.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_84.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_85.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_86.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_87.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_88.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_89.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_9.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_90.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_91.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_92.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_93.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_94.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_95.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_96.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_97.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_98.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_99.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_sink_S14_average.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_0.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_1.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_10.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_11.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_12.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_13.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_14.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_15.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_16.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_17.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_18.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_19.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_2.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_20.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_21.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_22.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_23.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_24.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_25.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_26.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_27.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_28.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_29.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_3.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_30.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_31.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_32.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_33.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_34.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_35.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_36.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_37.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_38.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_39.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_4.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_40.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_41.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_42.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_43.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_44.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_45.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_46.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_47.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_48.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_49.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_5.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_50.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_51.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_52.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_53.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_54.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_55.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_56.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_57.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_58.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_59.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_6.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_60.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_61.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_62.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_63.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_64.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_65.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_66.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_67.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_68.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_69.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_7.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_70.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_71.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_72.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_73.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_74.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_75.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_76.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_77.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_78.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_79.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_8.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_80.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_81.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_82.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_83.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_84.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_85.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_86.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_87.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_88.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_89.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_9.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_90.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_91.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_92.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_93.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_94.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_95.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_96.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_97.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_98.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_99.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S14_average.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/DEM_solution_S4_average.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/output_solution_S14.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/output_variable_S14.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S14/scatter_plot_S14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_0.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_1.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_10.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_11.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_12.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_13.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_14.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_15.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_16.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_17.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_18.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_19.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_2.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_20.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_21.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_22.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_23.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_24.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_25.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_26.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_27.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_28.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_29.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_3.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_30.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_31.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_32.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_33.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_34.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_35.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_36.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_37.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_38.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_39.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_4.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_40.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_41.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_42.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_43.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_44.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_45.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_46.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_47.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_48.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_49.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_5.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_50.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_51.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_52.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_53.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_54.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_55.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_56.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_57.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_58.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_59.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_6.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_60.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_61.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_62.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_63.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_64.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_65.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_66.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_67.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_68.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_69.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_7.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_70.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_71.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_72.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_73.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_74.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_75.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_76.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_77.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_78.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_79.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_8.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_80.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_81.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_82.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_83.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_84.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_85.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_86.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_87.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_88.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_89.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_9.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_90.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_91.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_92.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_93.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_94.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_95.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_96.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_97.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/DEM_sink_S2_average.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/output_solution_S2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/output_variable_S2.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/05_visualization/S2/scatter_plot_S2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_data/DEM/DEM_sink.tif" beforeDir="false" afterPath="$PROJECT_DIR$/01_data/DEM/DEM_sink.tif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_DEM_optimization/00_D8_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_DEM_optimization/00_D8_flow.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03_DEM_optimization/00_sink.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_DEM_optimization/00_sink.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_DEM_optimization/00_velocity.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_DEM_optimization/00_velocity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03_DEM_optimization/04_sink_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/03_DEM_optimization/04_sink_optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_DEM_optimization/output_2m.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_DEM_optimization/output_solution_S4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_DEM_optimization/output_variable_S4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_DEM_optimization/scatter_plot_S4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_result/02_show_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/04_result/02_show_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_result/DEM_sink.tif" beforeDir="false" afterPath="$PROJECT_DIR$/04_result/DEM_sink.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_result/min_earth_volume_dem.tif" beforeDir="false" afterPath="$PROJECT_DIR$/04_result/min_earth_volume_dem.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_result/min_earth_volume_solution.tif" beforeDir="false" afterPath="$PROJECT_DIR$/04_result/min_earth_volume_solution.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_result/min_flow_length_dem.tif" beforeDir="false" afterPath="$PROJECT_DIR$/04_result/min_flow_length_dem.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04_result/min_flow_length_solution.tif" beforeDir="false" afterPath="$PROJECT_DIR$/04_result/min_flow_length_solution.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_visualization/02_mean_sink.py" beforeDir="false" afterPath="$PROJECT_DIR$/05_visualization/02_total_sink.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_visualization/DEM_sink.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_visualization/output_solution_S4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_visualization/output_variable_S4.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_visualization/scatter_plot_S4.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/results.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/results.pptx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +375,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.01_specific_sink">
+  <component name="RunManager" selected="Python.04_sink_optimization">
     <configuration name="00_sink" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SWMM_DEM_Optimization" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,29 +398,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="00_velocity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SWMM_DEM_Optimization" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/03_DEM_optimization" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03_DEM_optimization/00_velocity.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="01_specific_sink" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="02_total_sink" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SWMM_DEM_Optimization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -132,7 +411,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\05_visualization\01_specific_sink.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_visualization/02_total_sink.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,7 +420,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="02_show_image" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="03_mean_sink" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SWMM_DEM_Optimization" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -149,12 +428,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/04_result" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/05_visualization" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04_result/02_show_image.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_visualization/03_mean_sink.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,13 +464,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="04_total_earth_work" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SWMM_DEM_Optimization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/05_visualization" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/05_visualization/04_total_earth_work.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.01_specific_sink" />
-        <item itemvalue="Python.02_show_image" />
-        <item itemvalue="Python.00_sink" />
         <item itemvalue="Python.04_sink_optimization" />
-        <item itemvalue="Python.00_velocity" />
+        <item itemvalue="Python.03_mean_sink" />
+        <item itemvalue="Python.00_sink" />
+        <item itemvalue="Python.02_total_sink" />
+        <item itemvalue="Python.04_total_earth_work" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +523,9 @@
       <workItem from="1712651782496" duration="15898000" />
       <workItem from="1712678579179" duration="2620000" />
       <workItem from="1712699214923" duration="3911000" />
-      <workItem from="1712736103184" duration="15018000" />
+      <workItem from="1712736103184" duration="20714000" />
+      <workItem from="1712777188411" duration="3549000" />
+      <workItem from="1712824829027" duration="12048000" />
     </task>
     <task id="LOCAL-00001" summary="0403">
       <created>1712158034255</created>
@@ -322,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712678606708</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="0403">
+      <created>1712757268577</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712757268577</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,28 +666,31 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$03_solution_peak_volume.coverage" NAME="03_solution_peak_volume 覆盖结果" MODIFIED="1712331557126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/02_SWMM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_solutions_total_runoff.coverage" NAME="02_solutions_total_runoff 覆盖结果" MODIFIED="1712523869357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/02_SWMM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_location.coverage" NAME="02_location 覆盖结果" MODIFIED="1712664600831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$04_sink_optimization.coverage" NAME="04_sink_optimization 覆盖结果" MODIFIED="1712751694768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$03_Nodes.coverage" NAME="03_Nodes 覆盖结果" MODIFIED="1712311379878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_data" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$04_sink_optimization.coverage" NAME="04_sink_optimization 覆盖结果" MODIFIED="1712850644526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_subcatchment_grid_number.coverage" NAME="01_subcatchment_grid_number 覆盖结果" MODIFIED="1712349942582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_optimization.coverage" NAME="01_optimization 覆盖结果" MODIFIED="1712162335896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/02_SWMM_optimization" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_show_image.coverage" NAME="02_show_image 覆盖结果" MODIFIED="1712754290234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04_result" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_show_image.coverage" NAME="02_show_image 覆盖结果" MODIFIED="1712763751021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/04_result" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_location_2_0.coverage" NAME="02_location_2.0 覆盖结果" MODIFIED="1712532542249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_Subcatchment__1_.coverage" NAME="02_Subcatchment (1) 覆盖结果" MODIFIED="1712157972469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_data" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_test.coverage" NAME="01_test 覆盖结果" MODIFIED="1712185344712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/02_SWMM_optimization" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_location.coverage" NAME="01_location 覆盖结果" MODIFIED="1712235158776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$00_velocity.coverage" NAME="00_velocity 覆盖结果" MODIFIED="1712739637534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_optimization_rate.coverage" NAME="01_optimization_rate 覆盖结果" MODIFIED="1712329470441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/02_SWMM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_Subcatchment.coverage" NAME="02_Subcatchment 覆盖结果" MODIFIED="1712311374516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_data" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_total_sink.coverage" NAME="02_total_sink 覆盖结果" MODIFIED="1712850104502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05_visualization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$06_totaldata.coverage" NAME="06_totaldata 覆盖结果" MODIFIED="1712312772817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_data" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$00_sink.coverage" NAME="00_sink 覆盖结果" MODIFIED="1712752693254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$00_sink.coverage" NAME="00_sink 覆盖结果" MODIFIED="1712850232216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$03_example.coverage" NAME="03_example 覆盖结果" MODIFIED="1712265165204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$kkkkkkkkk.coverage" NAME="kkkkkkkkk 覆盖结果" MODIFIED="1712532295952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_mean_sink.coverage" NAME="01_mean_sink 覆盖结果" MODIFIED="1712757036625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05_visualization" />
-    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$05_Currentdata.coverage" NAME="05_Currentdata 覆盖结果" MODIFIED="1712312740191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_data" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$02_location__1_.coverage" NAME="02_location (1) 覆盖结果" MODIFIED="1712268026337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
     <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$00_D8_flow.coverage" NAME="00_D8_flow 覆盖结果" MODIFIED="1712739543434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$03_solution_peak_volume.coverage" NAME="03_solution_peak_volume 覆盖结果" MODIFIED="1712331557126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/02_SWMM_optimization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$04_total_earth_work.coverage" NAME="04_total_earth_work 覆盖结果" MODIFIED="1712840136834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05_visualization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$03_Nodes.coverage" NAME="03_Nodes 覆盖结果" MODIFIED="1712311379878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_data" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_optimization.coverage" NAME="01_optimization 覆盖结果" MODIFIED="1712162335896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/02_SWMM_optimization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_location.coverage" NAME="01_location 覆盖结果" MODIFIED="1712235158776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/03_DEM_optimization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$03_mean_sink.coverage" NAME="03_mean_sink 覆盖结果" MODIFIED="1712850325464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05_visualization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$01_mean_sink.coverage" NAME="01_mean_sink 覆盖结果" MODIFIED="1712757036625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/05_visualization" />
+    <SUITE FILE_PATH="coverage/SWMM_DEM_Optimization$05_Currentdata.coverage" NAME="05_Currentdata 覆盖结果" MODIFIED="1712312740191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/01_data" />
   </component>
 </project>
