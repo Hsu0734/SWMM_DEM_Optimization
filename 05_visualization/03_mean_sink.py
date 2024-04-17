@@ -11,8 +11,8 @@ wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimiz
 accumulated_raster = None
 
 # 循环读取每个文件，并累加
-for n in range(98):
-    filename = f'DEM_sink_S2_{n}.tif'
+for n in range(97):
+    filename = f'DEM_sink_S14_1_{n}.tif'
     current_raster = wbe.read_raster(filename)
     if accumulated_raster is None:
         accumulated_raster = current_raster
@@ -20,17 +20,17 @@ for n in range(98):
         accumulated_raster += current_raster
 
 # 计算平均值
-average_raster = accumulated_raster / 98
+average_raster = accumulated_raster / 97
 
 # 创建一个新的栅格文件用于保存平均后的结果
-wbe.write_raster(average_raster, 'DEM_sink_S2_average.tif', compress=True)
+wbe.write_raster(average_raster, 'DEM_sink_S14_1_average.tif', compress=True)
 
-path_01 = f'../05_visualization/DEM_sink_S2_average.tif'
+path_01 = f'../05_visualization/DEM_sink_S14_1_average.tif'
 data_01 = rs.open(path_01)
 
 fig, ax = plt.subplots(figsize=(16, 16))
 ax.tick_params(axis='both', which='major', labelsize=20)
-show(data_01, title=f'DEM_sink_S2_average', ax=ax)
+show(data_01, title=f'DEM_sink_S14_1_average', ax=ax)
 plt.ticklabel_format(style='plain')
 ax.grid(True, linestyle='--', color='grey')
 

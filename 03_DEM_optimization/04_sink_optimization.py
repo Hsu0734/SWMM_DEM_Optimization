@@ -121,10 +121,10 @@ from pymoo.problems.single.knapsack import create_random_knapsack_problem
 
 algorithm = NSGA2(
     pop_size=100,
-    n_offsprings=50,
+    n_offsprings=30,
     sampling=FloatRandomSampling(),
-    crossover=SBX(prob=0.8, eta=30),
-    mutation=PM(eta=40),
+    crossover=SBX(prob=0.9, eta=30),
+    mutation=PM(eta=30),
     eliminate_duplicates=True)
 
 '''algorithm = NSGA2(

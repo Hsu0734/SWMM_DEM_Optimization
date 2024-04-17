@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 import whitebox_workflows as wbw
 
 # 读取CSV文件
-df = pd.read_csv('output_variable_S2.csv')
+df = pd.read_csv('output_variable_S14_1.csv')
 
 wbe = wbw.WbEnvironment()
 wbe.verbose = False
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
-dem = wbe.read_raster('S2.tif')
+dem = wbe.read_raster('S14-1.tif')
 
 # 循环处理CSV文件中的0到99行
 for n in range(100):
@@ -43,7 +43,7 @@ for n in range(100):
                 sink_area[row, col] = 1.0
 
     wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\05_visualization'
-    output_filename = f'DEM_sink_S2_{n}.tif'
+    output_filename = f'DEM_sink_S14_1_{n}.tif'
     wbe.write_raster(sink_area, output_filename, compress=True)
 
     # visualization

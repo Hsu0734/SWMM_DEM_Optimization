@@ -5,15 +5,15 @@ import matplotlib.pyplot as plt
 import whitebox_workflows as wbw
 
 # 读取CSV文件
-df = pd.read_csv('output_variable_S14.csv')
+df = pd.read_csv('output_variable_S14_1.csv')
 
 wbe = wbw.WbEnvironment()
 wbe.verbose = False
 wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\01_data\DEM'
-dem = wbe.read_raster('S14.tif')
+dem = wbe.read_raster('S14-1.tif')
 
 # 循环处理CSV文件中的0到99行
-for n in range(100):
+for n in range(97):
     row = df.iloc[int(n)]
     row_list = row.tolist()
 
@@ -28,7 +28,7 @@ for n in range(100):
                 m += 1
 
     wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimization\SWMM_DEM_Optimization\05_visualization'
-    output_filename = f'DEM_solution_S14_{n}.tif'
+    output_filename = f'DEM_solution_S14_1_{n}.tif'
     wbe.write_raster(layer, output_filename, compress=True)
 
 ###
@@ -43,8 +43,8 @@ wbe.working_directory = r'D:\PhD career\05 SCI papers\06 Multi-objective optimiz
 accumulated_raster = None
 
 # 循环读取每个文件，并累加
-for n in range(100):
-    filename = f'DEM_solution_S14_{n}.tif'
+for n in range(97):
+    filename = f'DEM_solution_S14_1_{n}.tif'
     current_raster = wbe.read_raster(filename)
     if accumulated_raster is None:
         accumulated_raster = current_raster
@@ -52,17 +52,17 @@ for n in range(100):
         accumulated_raster += current_raster
 
 # 计算平均值
-average_raster = accumulated_raster / 100
+average_raster = accumulated_raster / 97
 
 # 创建一个新的栅格文件用于保存平均后的结果
-wbe.write_raster(average_raster, 'DEM_solution_S14_average.tif', compress=True)
+wbe.write_raster(average_raster, 'DEM_solution_S14_1_average.tif', compress=True)
 
-path_01 = f'../05_visualization/DEM_solution_S14_average.tif'
+path_01 = f'../05_visualization/DEM_solution_S14_1_average.tif'
 data_01 = rs.open(path_01)
 
 fig, ax = plt.subplots(figsize=(16, 16))
 ax.tick_params(axis='both', which='major', labelsize=20)
-show(data_01, title=f'DEM_solution_S4_average', ax=ax)
+show(data_01, title=f'DEM_solution_S14_1_average', ax=ax)
 plt.ticklabel_format(style='plain')
 ax.grid(True, linestyle='--', color='grey')
 
